@@ -7,7 +7,7 @@
     "body":{
         "nombre":"Juan Carlos Gonzalez Huerta",
         "descripcion":"Actualmente estoy estudiando en la Universidad Tecnológica de Aguascalientes, tengo 22 años y estoy estudiando Desarrollo y Manejo de Software.",
-        "tecnologias":"MongoDB, SQL, Javascript, Nodejs",
+        "tecnologias":"Nodejs, Javascript, Golang, MongoDB",
         "contador":"Visitas",
         "contador2":"Visitas",
         "DescripcionTecnologias":"Tecnologias:"

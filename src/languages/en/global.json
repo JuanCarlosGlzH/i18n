@@ -7,7 +7,7 @@
     "body":{
         "nombre":"Juan Carlos Gonzalez Huerta",
         "descripcion":"Im currently studying at the Technological University of Aguascalientes, Im 22 years old and im studying Software Development and Management Engineering career.",
-        "tecnologias":"MongoDB, SQL, Javascript, Nodejs",
+        "tecnologias":"Nodejs, Javascript, Golang, MongoDB",
         "contador":"Visitors",
         "contador2":"Visitors",
         "DescripcionTecnologias":"Tech:"
