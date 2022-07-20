@@ -1,40 +1,61 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 function App() {
   const [t, i18n] = useTranslation("global")
+  const [count, setCount] = useState(0)
   return (
-     
-<nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
-  <div className="container flex flex-wrap justify-between items-center mx-auto">
-    <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-      <span className="sr-only">Open main menu</span>
-      <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-    </button>
-    <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-      <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-        <li>
-          <a href="#" className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Home</a>
-        </li>
-        <li>
-          <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
-        </li>
-        <li>
-          <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
-        </li>
-        <li>
-          <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Pricing</a>
-        </li>
-        <li>
-          <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <div className=''>
+      <nav className="bg-blue-100 border-black px-200 sm:px-40 py-2.5 rounded-b-xl dark:bg-gray-900 ">
+        <div className="container flex flex-wrap justify-between items-center mx-auto">
+          <div className='flex w-96 justify-around'>
+            <div className='hover:text-white text-black-500 transition hover:animate-pulse font-semibold cursor-pointer'>
+              {t("navbar.inicio")}
+            </div>
+            <div onClick={() => { i18n.changeLanguage("en") }} className='hover:text-white text-black-500 transition hover:animate-pulse font-semibold cursor-pointer'>
+              {t("navbar.ingles")}
+            </div>
+            <div onClick={() => { i18n.changeLanguage("es") }} className='hover:text-white text-black-500 transition hover:animate-pulse font-semibold cursor-pointer'>
+              {t("navbar.espanol")}
+            </div>
 
-    
+          </div>
+          <div className='flex justify-end'>
+            <div className='mx-5 hover:text-white text-black-300 transition hover:animate-pulse font-semibold cursor-pointer'>
+              LINKEDIN
+            </div>
+            <div className='mx-5 hover:text-white text-black-300 transition hover:animate-pulse font-semibold cursor-pointer'>
+              TWITTER
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div className='w-2/4' >
+        <br></br>
+        
+        
+        <h2 className='text-4xl text-white text-center font-extrabold'>Juan Carlos Gonzalez Huerta</h2>
+        <br></br>
+        <p className='text-xl text-center  text-gray-400'>{t("body.descripcion")}</p>
+        <br></br>
+        <br></br>
+        <button  onClick={()=>{setCount(count + 1)}} class="bg-blue-500 text-center  hover:bg-red-700 text-black font-bold py-5 px-12 border border-red-700 rounded">
+        {t("body.contador")}
+        </button>
+        <p className='text-center text-white'>{t("body.contador2")}: {count}</p>
+        <br></br>
+        <p className='text-xl text-center text-white'>{t("body.DescripcionTecnologias")}</p>
+        
+        <p className='text-xl text-center text-white'>{t("body.tecnologias")}</p>
+
+        </div>
+     
+
+
+    </div>
+
   );
 }
 
